@@ -1,0 +1,1 @@
+("7.4" racket ("8e1f62714816c8238a51cc1d77fb3bb80a863b62" . "0b74c7de2c742357d0e27e00da0f2a08f7b17f15") #"C:\\Users\\ASUS\\Documents\\KOC\\Fall 2019\\COMP301 - TA - Programming Languages Theory\\Fall 2019 PS\\7\\Solutions\\mutable-pairs\\pairval2.rkt" (collects #"eopl" #"lang" #"reader.rkt") (collects #"eopl" #"main.rkt") (collects #"errortrace" #"errortrace-key.rkt"))

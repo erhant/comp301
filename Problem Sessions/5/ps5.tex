@@ -1,0 +1,90 @@
+\documentclass[12pt,reqno]{amsart}
+
+\usepackage{amsthm,amsmath,amssymb}
+\usepackage{mathtools}
+\usepackage{geometry}
+\usepackage{proof}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage{courier}
+\usepackage{hyperref}
+\hypersetup{
+    hidelinks=true
+}
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily\small, columns=fullflexible, language=Lisp, morekeywords={define, lambda, if, car, cdr, zero, eopl, proc, letrec, in, then, else}, keywordstyle=\bfseries\color{blue!40!black}}
+\newcommand{\code}[1]{\texttt{#1}}
+\graphicspath{ {./} }
+\geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=25mm,
+ top=20mm,
+ }
+
+
+\begin{document}
+\thispagestyle{empty}
+\begin{center}
+\large\textbf{Problem Set 5 \\ COMP301 Fall 2019} \\
+\normalsize\textbf{7.11.2019 17:30 - 18:45} \\
+\end{center}
+
+\vspace{7.5mm}
+
+\subsection*{Read me first!} Please download the \textit{Codes} file. In the scheme codes, you will see some hints regarding where to modify. You will use DrRacket. We have also edited the \code{tests.rkt} for each of them so that if you solve the problem, running \code{tests.rkt} should have no errors. You can also write your own program in \code{let}, \code{letrec} or \code{proc} by writing your code in a string and run it from the console of the respective \code{tests.rkt} like this:
+\begin{lstlisting}
+(display (run ''your code here''))
+\end{lstlisting}
+Make sure you run the file itself to update the definitions before running your code from console. Regarding problem 2, just write the \code{proc} code to a text file and save it, after you make sure that it is the correct answer. As for your submission, you will submit your modified code and the text file for problem 2 in a zip folder.
+
+\vspace{7.5mm}
+
+\textbf{Problem 1}\footnote{EOPL p.74 Exercise 3.16}: Extend the \code{let} language so that a let declaration can declare an arbitrary number of variables, using the grammar:
+$$
+Expression ::= \text{let } \{Identifier = Expression\}^* \text{ in } Expression
+$$
+As in Scheme’s let, each of the right-hand sides are evaluated in the current environment and the body is evaluated with each new variable bound to the value of its associated right-hand side. For example:
+\begin{lstlisting}
+let x = 30 in
+    let x = -(x,1)
+          y = -(x,2)
+    in -(x,y)
+\end{lstlisting}
+evaluates to $1$.
+
+\vspace{7.5mm}
+
+\textbf{Problem 2}\footnote{EOPL p.80 Exercise 3.20}: In \code{PROC} language, procedures have only one argument, but one can get the effect of multiple argument procedures by using procedures that return other procedures. For example, one might write a code like:
+\begin{lstlisting}
+let f = proc (x) proc (y) ...
+in ((f 3) 4)
+\end{lstlisting}
+See, it is as if we called using two parameters as \code{(f 3 4)}! This trick is called \textit{Currying} and the procedure is said to be \textit{Curried}. Write a Curried procedure that takes two arguments and returns their sum. You do not have to modify or extend the language, just write the function. \textit{Hint: You can write summation in Scheme language by doing} \code{-(x, -(0, y))}
+
+\newpage
+\thispagestyle{empty}
+
+\textbf{Problem 3}\footnote{EOPL p.82 Exercise 3.28}: \textit{Dynamic binding} (or \textit{dynamic scoping}) is an alternative design for procedures, in which the procedure body is evaluated in an environment obtained by extending the environment at the point of call. For example in the code below:
+\begin{lstlisting}
+let a = 3
+in let p = proc (x) - (x, a)
+    in let a = 5
+        in -(a, (p, 2))
+\end{lstlisting}
+the \code{a} in the procedure body would be bound to 5, not 3. Modify the \code{proc} language to use \textit{dynamic binding}.
+
+\vspace{7.5mm}
+
+
+\textbf{Problem 4}\footnote{EOPL p.84-85 Exercise 3.32}: Extend the \code{letrec} language to allow the declaration of any number of mututally recursive unary procedures, for example:
+\begin{lstlisting}
+letrec
+   even(x) = if zero?(x) then 1 else (odd -(x,1))
+   odd(x) = if zero?(x) then 0 else (even -(x,1))
+in (odd 13)
+\end{lstlisting}
+which evaluates to 1 because 13 is an odd number.
+
+\end{document}

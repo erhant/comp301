@@ -1,0 +1,45 @@
+\documentclass[12pt,reqno]{amsart}
+
+\usepackage{amsthm,amsmath,amssymb}
+\usepackage{mathtools}
+\usepackage{geometry}
+\usepackage{proof}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage{courier}
+\usepackage{hyperref}
+\hypersetup{
+    hidelinks=true
+}
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily\small, columns=fullflexible, language=Lisp, morekeywords={define, lambda, if, car, cdr, zero, eopl, proc, letrec, in, then, else}, keywordstyle=\bfseries\color{blue!40!black}}
+\newcommand{\code}[1]{\texttt{#1}}
+\graphicspath{ {./} }
+\geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=25mm,
+ top=20mm,
+ }
+
+
+\begin{document}
+\thispagestyle{empty}
+\begin{center}
+\large\textbf{Problem Set 10 \\ COMP301 Fall 2019} \\
+\normalsize\textbf{19.12.2019 17:30 - 18:45} \\
+\end{center}
+
+\vspace{7.5mm}
+
+\textbf{Problem 1}: You are given the \code{Letrec} with continuations implemented using \textbf{data-structural representation}. Take your time to understand and digest how it works. You task is to convert this to \code{Letrec} with continuations implemented using \textbf{procedural representation}. You can refer to the lecture slide for help too.
+
+\vspace{7.5mm}
+
+\textbf{Problem 2}: Implement factorial function with continuation passing. You can use the boilerplate given in the codes file.
+
+\vfill
+
+\textbf{This is the last PS! Thank you for coming all this way...}
+\end{document}

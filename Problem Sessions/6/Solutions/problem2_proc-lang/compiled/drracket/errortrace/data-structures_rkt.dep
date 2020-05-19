@@ -1,0 +1,1 @@
+("7.4" racket ("111ccdedb1cdb55eba35e92a554e2cb818fb02e2" . "73ddb63cc0c1141f54d72787566b5d5078b0d8d5") #"C:\\Users\\ASUS\\Documents\\KOC\\Fall 2019\\COMP301 - TA - Programming Languages Theory\\Fall 2019 PS\\6\\Solutions\\problem2_proc-lang\\lang.rkt" (collects #"eopl" #"lang" #"reader.rkt") (collects #"eopl" #"main.rkt") (collects #"errortrace" #"errortrace-key.rkt"))

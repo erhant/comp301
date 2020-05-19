@@ -1,0 +1,1 @@
+("7.4" racket ("d03432e487756a25faa47e7ceab0b0faf6a7040f" . "10a59ce4b7d7b7e712b5bcf910b4fdc42324ab03") #"C:\\Users\\ASUS\\Documents\\KOC\\Fall 2019\\COMP301 - TA - Programming Languages Theory\\Fall 2019 PS\\4\\Solution\\EOPL Let\\data-structures.rkt" (collects #"eopl" #"lang" #"reader.rkt") (collects #"eopl" #"main.rkt") (collects #"errortrace" #"errortrace-key.rkt"))
